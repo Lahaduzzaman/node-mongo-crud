@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>MongoDB</title>
   </head>
   <body>
     <h1>I have a MongoDB Database</h1>
     <form action="/addProduct" method="post">
-      <input type="text" placeholder="name" name="name" />
-      <input type="text" placeholder="price" name="price" />
-      <input type="text" placeholder="quantity" name="quantity" />
+      <input type="text" placeholder="Name" name="name" />
+      <input type="text" placeholder="Price" name="price" />
+      <input type="text" placeholder="Quantity" name="quantity" />
       <button type="submit">Add Product</button>
     </form>
     <div id="products"></div>
@@ -25,9 +25,9 @@
             container.innerHTML = "";
             products.forEach((pd) => {
               const p = document.createElement("p");
-              p.innerHTML = `<strong>${pd.name}</strong> -- price: ${pd.price} quantity: ${pd.quantity}
-                <button onclick="loadProduct('${pd._id}')">update</button>    
-                <button onclick="deleteProduct(event, '${pd._id}')">delete</button>
+              p.innerHTML = `<strong>${pd.name}</strong> -  Price: ${pd.price}, Quantity: ${pd.quantity}
+                <button onclick="loadProduct('${pd._id}')">Update</button>    
+                <button onclick="deleteProduct(event, '${pd._id}')">Delete</button>
                 `;
               container.appendChild(p);
             });
